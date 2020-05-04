@@ -153,7 +153,9 @@ Our state shape:
 */
 
 const FridgeContents = () => {
-  const fridgeItems = /* TODO */
+  const fridgeItems = //useSelector(state => {
+    //return state.fridge;
+  });
 
   return (
     <div>
@@ -197,7 +199,10 @@ const App = () => {
   // We're going to watch OUR favourite movie,
   // in our BOYFRIEND's favourite genre.
   // (Terror at Jarry Park)
-  const movie = /* TODO */
+  const movie = //useSelector(state => {
+    //const genre = state.boyfriendFavouriteGenre;
+    //return state.myFavouriteMovies[genre];
+  })
 
   return (
     <div>
@@ -226,7 +231,14 @@ Our state shape:
 const UserProfile = () => {
   // `streetAddress` should be formatted as:
   // "129 W. 81st St, Apartment 5A"
-  const streetAddress = /* TODO */
+  const streetAddress = //useSelector(state => {
+    //if (state.address.line2){
+      //return `${state.address.line1}, ${state.address.line2}`
+    //} else {
+      //state.address.line1
+    //}
+    
+  });
 
   return (
     <div>
@@ -385,7 +397,6 @@ const OnlineUsers = () => {
 
 ```js
 import { useDispatch } from 'react-redux';
-
 import { addItemToFridge } from '../actions';
 
 const FridgeForm = () => {
@@ -395,7 +406,7 @@ const FridgeForm = () => {
   return (
     <form
       onSubmit={() => {
-        /* TODO */
+        //dispatch(additemToFridge(value));
       }}
     >
       <input type='text' onChange={(ev) => setValue(ev.target.value)} />
@@ -420,6 +431,7 @@ const Modal = () => {
     const handleKeydown = (ev) => {
       // TODO: Close modal when 'Escape' is pressed
       // (Hint: use ev.key)
+      //if (ev.key === 'Escape' ) dispatch(dismissModal());
     };
 
     window.addEventListener('keydown', handleKeydown);
