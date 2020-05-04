@@ -12,6 +12,10 @@ const Button = styled.button`
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+
+  :hover {
+    cursor: pointer;
+}
 `;
 
 export default Button;
